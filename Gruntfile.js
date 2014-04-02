@@ -19,11 +19,22 @@ module.exports = function (grunt) {
     },
 
     browserify: {
-      dist: {
-
+      vendor: {
+        src: [],
+        dest: '<%= dest %>static/js/vendor/vendor.js',
+        options: {
+          require: ['backbone']
+        }
+      },
+      app: {
+        src: ['<%= src %>client/**/*.js'],
+        dest: '<%= dest %>static/js/app.js',
+        options: {
+          require: ['backbone']
+        }
       }
     }
   });
 
-  grunt.registerTask('default', ['jshint']);
+  grunt.registerTask('default', ['jshint', 'browserify']);
 };
