@@ -23,14 +23,15 @@ module.exports = function (grunt) {
         src: [],
         dest: '<%= dest %>static/js/vendor/vendor.js',
         options: {
-          require: ['backbone']
+          require: ['backbone'],
+          alias: ['backbone:backbone']
         }
       },
       app: {
         src: ['<%= src %>client/**/*.js'],
         dest: '<%= dest %>static/js/app.js',
         options: {
-          require: ['backbone']
+          external: ['backbone']
         }
       }
     }
