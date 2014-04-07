@@ -15,7 +15,7 @@ module.exports = function (grunt) {
       options: {
         jshintrc: true
       },
-      files: ['Gruntfile.js']
+      files: ['Gruntfile.js', 'src/**/*.js']
     },
 
     browserify: {
@@ -34,8 +34,12 @@ module.exports = function (grunt) {
           external: ['backbone']
         }
       }
+    },
+
+    clean: {
+      build: ['<%= dest %>']
     }
   });
 
-  grunt.registerTask('default', ['jshint', 'browserify']);
+  grunt.registerTask('default', ['jshint', 'clean','browserify']);
 };
