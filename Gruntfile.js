@@ -52,6 +52,15 @@ module.exports = function(grunt) {
 
     clean: {
       build: ['<%= dest %>']
+    },
+
+    mochaTest: {
+      options: {
+        reporter: 'spec'
+      },
+      test: {
+        src: ['test/**/*_test.js']
+      }
     }
   });
 
