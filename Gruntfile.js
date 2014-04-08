@@ -1,4 +1,4 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
   'use strict';
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
@@ -36,10 +36,24 @@ module.exports = function (grunt) {
       }
     },
 
+    uglify: {
+      options: {
+        sourceMap: true,
+        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */'
+      },
+      files: {
+        cwd: '<%= dest %>',
+        src: '**/*.js',
+        dest: '<%= dest %>',
+        expand: true,
+        flatten: false
+      }
+    },
+
     clean: {
       build: ['<%= dest %>']
     }
   });
 
-  grunt.registerTask('default', ['jshint', 'clean','browserify']);
+  grunt.registerTask('default', ['jshint', 'clean', 'browserify', 'uglify']);
 };
