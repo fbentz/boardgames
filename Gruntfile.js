@@ -55,11 +55,11 @@ module.exports = function(grunt) {
     },
 
     mochaTest: {
-      options: {
-        reporter: 'spec'
-      },
       test: {
-        src: ['test/**/*_test.js']
+        options: {
+          reporter: 'spec'
+        },
+        src: ['tests/**/*_test.js']
       }
     }
   });
