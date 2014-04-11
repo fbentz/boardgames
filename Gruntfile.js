@@ -23,15 +23,15 @@ module.exports = function(grunt) {
         src: [],
         dest: '<%= dest %>static/js/vendor/vendor.js',
         options: {
-          require: ['backbone'],
-          alias: ['backbone:backbone']
+          require: ['backbone', 'hbsfy'],
+          alias: ['backbone:backbone', 'hbsfy:handlebars']
         }
       },
       app: {
         src: ['<%= src %>client/**/*.js'],
         dest: '<%= dest %>static/js/app.js',
         options: {
-          external: ['backbone']
+          external: ['backbone','hbsfy']
         }
       }
     },
@@ -65,4 +65,5 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', ['jshint', 'clean', 'browserify', 'uglify']);
+  grunt.registerTask('dev', ['jshint', 'clean', 'browserify']);
 };
