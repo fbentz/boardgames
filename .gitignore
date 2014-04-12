@@ -2,3 +2,5 @@
 node_modules/
 .git/
 build/
+.sublime-grunt.cache
+.codeintel/
