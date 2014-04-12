@@ -19,19 +19,22 @@ module.exports = function(grunt) {
     },
 
     browserify: {
+      options: {
+        transform: ['hbsfy']
+      },
       vendor: {
         src: [],
         dest: '<%= dest %>static/js/vendor/vendor.js',
         options: {
-          require: ['backbone', 'hbsfy'],
-          alias: ['backbone:backbone', 'hbsfy:handlebars']
+          require: ['backbone', 'jquery'],
+          alias: ['backbone:backbone', 'jquery:jquery']
         }
       },
       app: {
         src: ['<%= src %>client/**/*.js'],
         dest: '<%= dest %>static/js/app.js',
         options: {
-          external: ['backbone','hbsfy']
+          external: ['backbone', 'jquery']
         }
       }
     },
