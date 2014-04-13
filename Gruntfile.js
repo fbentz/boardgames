@@ -34,7 +34,9 @@ module.exports = function(grunt) {
         src: ['<%= src %>client/**/*.js'],
         dest: '<%= dest %>static/js/app.js',
         options: {
-          external: ['backbone', 'jquery']
+          external: ['backbone', 'jquery'],
+          alias: ['<%= src %>client/lib/base/index.js:base'],
+          watch: true
         }
       }
     },
@@ -57,6 +59,15 @@ module.exports = function(grunt) {
       build: ['<%= dest %>']
     },
 
+    copy: {
+      main: {
+        expand: true,
+        cwd:'src/client/public',
+        src:'**',
+        dest: '<%= dest %>/static'
+      }
+    },
+
     mochaTest: {
       test: {
         options: {
@@ -67,6 +78,6 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['jshint', 'clean', 'browserify', 'uglify']);
-  grunt.registerTask('dev', ['jshint', 'clean', 'browserify']);
+  grunt.registerTask('default', ['jshint', 'clean', 'copy', 'browserify', 'uglify']);
+  grunt.registerTask('dev', ['jshint', 'clean', 'copy', 'browserify']);
 };
