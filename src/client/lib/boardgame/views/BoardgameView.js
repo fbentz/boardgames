@@ -13,5 +13,9 @@ function initialize() {
 }
 
 function render() {
-  this.$el.html(this.template(this.model.toJSON()));
+  console.log(this.model);
+  var rendering = this.template({
+    db: this.model.get('attributes')
+  });
+  this.$el.html(rendering);
 }
