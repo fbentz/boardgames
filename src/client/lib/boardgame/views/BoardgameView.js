@@ -8,14 +8,12 @@ module.exports = Parent.extend({
 });
 
 function initialize() {
+  this.listenTo(this.model, 'sync', this.render);
   this.model.fetch();
   this.render();
 }
 
 function render() {
-  console.log(this.model);
-  var rendering = this.template({
-    db: this.model.get('attributes')
-  });
-  this.$el.html(rendering);
+  this.$el.html(this.template(this.model.attributes));
+  return this;
 }

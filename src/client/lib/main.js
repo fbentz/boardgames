@@ -1,6 +1,5 @@
-var BoardgameView = require('./boardgame/views/BoardgameView');
-var BoardgameModel = require('./boardgame/model/BoardgameModel');
+var Backbone = require('backbone');
+var Route = require('./boardgame/Route');
 
-new BoardgameView({
-  model: new BoardgameModel()
-});
+new Route();
+Backbone.history.start({pushState: true});
