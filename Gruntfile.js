@@ -80,5 +80,6 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', ['jshint', 'clean', 'copy', 'browserify', 'uglify']);
+  grunt.registerTask('test', ['jshint', 'clean', 'copy', 'browserify', 'uglify', 'mochaTest']);
   grunt.registerTask('dev', ['jshint', 'clean', 'copy', 'browserify']);
 };
