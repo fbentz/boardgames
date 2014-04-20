@@ -70,7 +70,7 @@ module.exports = function(grunt) {
     },
 
     mochaTest: {
-      test: {
+      client: {
         options: {
           reporter: 'spec'
         },
