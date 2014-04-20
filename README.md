@@ -1,6 +1,6 @@
+[![Build Status](https://travis-ci.org/fbentz/boardgames.svg?branch=master)](https://travis-ci.org/fbentz/boardgames)
 [![Code Climate](https://codeclimate.com/github/fbentz/boardgames.png)](https://codeclimate.com/github/fbentz/boardgames)
 [![Dependency Status](https://gemnasium.com/fbentz/boardgames.svg)](https://gemnasium.com/fbentz/boardgames)
-[![Build Status](https://travis-ci.org/fbentz/boardgames.svg?branch=master)](https://travis-ci.org/fbentz/boardgames)
 
 #BOARDGAMES 
 Boardgames est une app qui permet la gestion de jeux plateaux.
