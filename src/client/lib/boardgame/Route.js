@@ -12,6 +12,7 @@ module.exports = Parent.Router.extend({
 function defaultAction() {
   var boardgame = new BoardgameModel();
   new BoardgameView({
+    el: 'body',
     model: boardgame
   });
 }
