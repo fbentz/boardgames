@@ -27,8 +27,8 @@ module.exports = function(grunt) {
         src: [],
         dest: '<%= dest %>static/js/vendor/vendor.js',
         options: {
-          require: ['backbone', 'jquery', 'underscore'],
-          alias: ['backbone:backbone', 'jquery:jquery', 'lodash/dist/lodash.underscore:underscore']
+          require: ['backbone', 'jquery'],
+          alias: ['backbone:backbone', 'jquery:jquery']
         }
       },
       app: {
