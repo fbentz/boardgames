@@ -2,11 +2,15 @@
 [![Code Climate](https://codeclimate.com/github/fbentz/boardgames.png)](https://codeclimate.com/github/fbentz/boardgames)
 [![Dependency Status](https://gemnasium.com/fbentz/boardgames.svg)](https://gemnasium.com/fbentz/boardgames)
 
-#BOARDGAMES 
+# BOARDGAMES 
 Boardgames est une app qui permet la gestion de jeux plateaux.
 
+* Dépendance
+  * node
+  * couchdb
+
 ##Couchdb
-
 A installer pour continuer le developpement et changer le cors
-
-> brew install couchdb
+```Batchfile
+brew install couchdb
+````
