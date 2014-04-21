@@ -1,5 +1,4 @@
 var Parent = require('backbone');
-var BoardgameView = require('./views/BoardgameView');
 var BoardgameModel = require('./model/BoardgameModel');
 
 module.exports = Parent.Router.extend({
