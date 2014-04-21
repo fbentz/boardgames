@@ -1,0 +1,18 @@
+<form role="form">
+  <div class="form-group col-xs-12">
+    <label for="title_boardgame">Titre du jeu</label>
+    <input class="input-lg col-xs-12" type="text" name="title" class="form-control" id="title_boardgame" placeholder="Saisissez le titre du jeux">
+  </div>
+  <div class="form-group col-xs-6">
+    <label for="min_player">Joueur Min.</label>
+    <input class="input-lg" type="number" min="1" max="4" name="min" step="1" value="2">
+  </div>
+  <div class="form-group col-xs-6">
+    <label for="min_player">Joueur Max.</label>
+    <input class="input-lg" type="number" min="2" max="20" name="max" step="1" value="5">    
+  </div>
+  <div class="pull-right">
+    <button type="button" class="btn btn-lg btn-default cancel">Annuler</button>
+    <button type="button" class="btn btn-lg btn-primary save">Sauvegarder</button>
+  </div>
+</form>
