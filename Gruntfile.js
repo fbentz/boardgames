@@ -15,7 +15,7 @@ module.exports = function(grunt) {
       options: {
         jshintrc: true
       },
-      files: ['Gruntfile.js', 'src/**/*.js']
+      files: ['Gruntfile.js', 'src/**/*.js', '!src/client/layout/**/*.js']
     },
 
     browserify: {
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
         }
       },
       app: {
-        src: ['<%= src %>client/**/*.js'],
+        src: ['<%= src %>client/lib/*.js'],
         dest: '<%= dest %>static/js/app.js',
         options: {
           external: ['backbone', 'jquery'],
@@ -63,7 +63,7 @@ module.exports = function(grunt) {
     copy: {
       main: {
         expand: true,
-        cwd:'src/client/public',
+        cwd:'src/client/layout',
         src:'**',
         dest: '<%= dest %>/static'
       }
