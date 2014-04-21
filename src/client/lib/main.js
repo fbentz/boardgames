@@ -1,5 +1,7 @@
 var Backbone = require('backbone');
-var Route = require('./boardgame/Route');
+var BoardgameRoute = require('./boardgame/Route');
 
-new Route();
-Backbone.history.start({pushState: true});
+new BoardgameRoute();
+
+Backbone.history.start();
+window.jQuery = require('jquery');
