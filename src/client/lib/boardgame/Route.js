@@ -4,15 +4,24 @@ var BoardgameModel = require('./model/BoardgameModel');
 
 module.exports = Parent.Router.extend({
   routes: {
-    '*all': 'defaultAction'
+    'boardgames': 'boardgamesAction',
+    'boardgames/new': 'boardgameNew',
   },
-  defaultAction: defaultAction
+  boardgamesAction: boardgamesAction,
+  boardgameNew: boardgameNew
 });
 
-function defaultAction() {
+function boardgamesAction() {
+  var Boardgames = require('./model/BoardgameCollection');
+  var list = new Boardgames();
+  list.fetch();
+}
+
+function boardgameNew() {
   var boardgame = new BoardgameModel();
-  new BoardgameView({
-    el: 'body',
+  var BoardgameNewView = require('./views/BoardgameEditView');
+  new BoardgameNewView({
+    el: 'section',
     model: boardgame
   });
 }
