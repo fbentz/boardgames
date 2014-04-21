@@ -7,8 +7,6 @@ module.exports = Parent.extend({
 });
 
 function initialize() {
-  this.listenTo(this.model, 'sync', this.render);
-  this.model.fetch();
   this.render();
 }
 
