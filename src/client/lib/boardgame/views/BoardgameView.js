@@ -1,7 +1,7 @@
 var Parent = require('base').View;
 
 module.exports = Parent.extend({
-  template: require('../templates/boardgameList.hbs'),
+  template: require('../templates/boardgameTableItem.hbs'),
   initialize: initialize,
   render: render
 });
@@ -11,6 +11,6 @@ function initialize() {
 }
 
 function render() {
-  this.$el.html(this.template(this.model.toJSON()));
+  this.$el.html(this.template());
   return this;
 }
