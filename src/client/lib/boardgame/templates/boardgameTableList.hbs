@@ -1,0 +1,23 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Titre du Jeu</th>
+      <th>Joueur Min.</th>
+      <th>Joueur Max.</th>
+      <th></th>
+    </tr>  
+  </thead>
+  <tbody>
+    {{#each collection}}
+      <tr>
+        <td>{{ title }}</td>
+        <td>{{ min }}</td>
+        <td>{{ max }}</td>
+        <td>
+          <a href="#boardgame/edit/{{ _id }}" class="btn btn-primary">Editer</a>
+          <a href="#boardgame/del/{{ _id }}" class="btn btn-danger">Supprimer</a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
