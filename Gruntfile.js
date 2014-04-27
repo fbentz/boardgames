@@ -49,7 +49,7 @@ module.exports = function(grunt) {
       },
       files: {
         cwd: '<%= dest %>',
-        src: '**/*.js',
+        src: ['**/*.js','!app.js', '!lib/**/*.*'],
         dest: '<%= dest %>',
         expand: true,
         flatten: false
@@ -61,11 +61,17 @@ module.exports = function(grunt) {
     },
 
     copy: {
-      main: {
+      client: {
         expand: true,
         cwd:'src/client/layout',
         src:'**',
         dest: '<%= dest %>/static'
+      },
+      server: {
+        expand: true,
+        cwd:'src/server',
+        src:'**',
+        dest: '<%= dest %>'
       }
     },
 
