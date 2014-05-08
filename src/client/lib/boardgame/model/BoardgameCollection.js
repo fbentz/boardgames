@@ -10,7 +10,6 @@ module.exports = Backbone.Collection.extend({
 });
 
 function initialize() {
-  this.fetch();
 }
 
 function parse(response) {
