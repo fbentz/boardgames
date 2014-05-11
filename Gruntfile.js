@@ -4,12 +4,14 @@ module.exports = function(grunt) {
 
   var DEST_DIR = 'build/';
   var SRC_DIR = 'src/';
+  var TEST_DIR = 'tests/';
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
     dest: DEST_DIR,
     src: SRC_DIR,
+    test: TEST_DIR,
 
     jshint: {
       options: {
@@ -49,7 +51,7 @@ module.exports = function(grunt) {
       },
       files: {
         cwd: '<%= dest %>',
-        src: ['**/*.js','!app.js', '!lib/**/*.*'],
+        src: ['**/*.js','!app.js', '!lib/**/*.*', '!route/**/*.*'],
         dest: '<%= dest %>',
         expand: true,
         flatten: false
@@ -76,11 +78,14 @@ module.exports = function(grunt) {
     },
 
     mochaTest: {
+      options: {
+        reporter: 'spec'
+      },
       client: {
-        options: {
-          reporter: 'spec'
-        },
-        src: ['tests/client/**/*_test.js']
+        src: ['<%= test %>/client/**/*_test.js']
+      },
+      server: {
+        src: ['<%= test %>/server/**/*_test.js']
       }
     }
   });

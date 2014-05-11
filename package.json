@@ -4,7 +4,8 @@
   "description": "Boardgames app",
   "main": "server.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "start": "node build/app.js"
   },
   "author": "Fabrice Bentz",
   "license": "MIT",
@@ -19,7 +20,8 @@
     "grunt-mocha-test": "*",
     "chai": "^1.9.0",
     "matchdep": "^0.3.0",
-    "mocha": "^1.17.1"
+    "mocha": "^1.17.1",
+    "supertest": "^0.12.0"
   },
   "dependencies": {
     "backbone": "^1.1.2",
@@ -29,6 +31,7 @@
     "passport-google": "^0.3.0",
     "express": "^4.1.0",
     "cookie-parser": "^1.0.1",
-    "body-parser": "^1.0.2"
+    "body-parser": "^1.0.2",
+    "nano": "^5.8.0"
   }
 }
